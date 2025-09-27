@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Graphing Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <h1>Graphing Calculator</h1>
+    
+    <div class="container">
+        <div class="coords-display">
+            <canvas id="displayCanvas" width="100" height="100"></canvas>
+        </div>
+        <div class="graph-area">
+
+        <div style="position: relative;">
+        <canvas id="graphCanvas" width="1000" height="1000"></canvas>
+        <div id="hoverBox" style="
+        position: absolute;
+        background: #fff;
+        border: 1px solid #aaa;
+        padding: 4px 8px;
+        font-family: monospace;
+        font-size: 12px;
+        border-radius: 4px;
+        pointer-events: none;
+        display: none;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        "></div>
+        </div>
+            
+            <div class="zoom-in-out">
+                <button onclick="zoomIn()">+</button>
+                <button onclick="zoomOut()">-</button>
+            </div>
+            <div class="pan">
+                <button onclick="moveLeft()">&larr;</button>
+                <button onclick="moveRight()">&rarr;</button>
+                <button onclick="moveUp()">&uarr;</button>
+                <button onclick="moveDown()">&darr;</button>
+            </div>
+            
+            
+        </div>
+
+        <div class="input-area">
+            <div class="radians-area">
+                <button onclick="toggleRadians()" id="radiansButton">Radians</button>
+            </div>
+            <div class="button-grid">
+                <button onclick="insert('sin(')">sin</button>
+                <button onclick="insert('cos(')">cos</button>
+                <button onclick="insert('tan(')">tan</button>
+                <button onclick="insert('^')">^</button>
+                <button onclick="insert('7')">7</button>
+                <button onclick="insert('8')">8</button>
+                <button onclick="insert('9')">9</button>
+                <button onclick="insert('/')">/</button>
+                <button onclick="insert('4')">4</button>
+                <button onclick="insert('5')">5</button>
+                <button onclick="insert('6')">6</button>
+                <button onclick="insert('*')">*</button>
+                <button onclick="insert('1')">1</button>
+                <button onclick="insert('2')">2</button>
+                <button onclick="insert('3')">3</button>
+                <button onclick="insert('-')">-</button>
+                <button onclick="insert('0')">0</button>
+                <button onclick="insert('.')">.</button>
+                <button onclick="insert('x')">x</button>
+                <button onclick="insert('+')">+</button>
+                <button onclick="clearInput()">C</button>
+                
+            </div>
+            <div class="function-input">
+                <input id="functionInput" type="text" placeholder="Enter function, e.g., sin(x)" />
+                <button onclick="addFunctionInput()">+</button>
+            </div>  
+        </div>
+        
+          
+        
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.8.0/math.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
